@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+  <span fxFlex="100%"></span>
+  <button mat-icon-button aria-label="Dashboard" (click)="navigateTo('dashboard')">
+    <mat-icon>dashboard</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Clientes" routerLink="/clientes">
+   <mat-icon>people_alt</mat-icon>
+ </button>
+</mat-toolbar>

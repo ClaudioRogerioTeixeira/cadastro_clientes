@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -75,7 +76,8 @@
               "browserTarget": "cadastro-clientes:build:production"
             },
             "development": {
-              "browserTarget": "cadastro-clientes:build:development"
+              "browserTarget": "cadastro-clientes:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -99,13 +101,26 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "cadastro-clientes"
+  "defaultProject": "cadastro-clientes",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

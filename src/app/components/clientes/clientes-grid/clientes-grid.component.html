@@ -1,0 +1,109 @@
+<h1>Lista de Clientes</h1>
+
+<!-- <mat-spinner *ngIf="clienteService.loading"></mat-spinner> -->
+<div class="add-button">
+  <button color="primary" mat-mini-fab routerLink="new" matTooltip="Criar Cliente">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<mat-table [dataSource]="clientes" class="mat-elevation-z8">
+
+  <!-- actions -->
+  <ng-container matColumnDef="actions" sticky="true">
+    <mat-header-cell *matHeaderCellDef><mat-icon color="primary">settings</mat-icon></mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button matTooltip="Editar registro" (click)="$event.stopPropagation()" routerLink="{{row.id}}"> <!-- edit(row.id); -->
+        <mat-icon color="primary">edit</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Apagar Registro" (click)="delete(row); $event.stopPropagation()">
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <!-- tipo {{row.tipo}}  -->
+  <ng-container matColumnDef="tipo">
+    <mat-header-cell *matHeaderCellDef>Tipo</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <span *ngIf="row.tipo === 'F'">
+        <mat-icon color="primary" matTooltip="Pessoa Física">group</mat-icon>
+      </span>
+      <span *ngIf="row.tipo === 'J'">
+        <mat-icon color="primary" matTooltip="Pessoa Jurídica">account_balance</mat-icon>
+      </span>
+    </mat-cell>
+  </ng-container>
+
+  <!-- nome fantasia -->
+  <ng-container matColumnDef="nomeFantasia">
+    <mat-header-cell *matHeaderCellDef> Nome Fantasia </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <span *ngIf="row.tipo === 'J'">
+        {{row.nomeFantasia | uppercase}}
+      </span>
+      <span *ngIf="row.tipo === 'F'">
+        <!-- ------------------------------- -->
+      </span>
+    </mat-cell>
+  </ng-container>
+
+  <!-- razão nome  -->
+  <ng-container matColumnDef="razaoNome">
+    <mat-header-cell *matHeaderCellDef> Razão/Nome </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.razaoNome | uppercase}} </mat-cell>
+  </ng-container>
+
+  <!-- cnpj -->
+  <ng-container matColumnDef="cnpjCpf">
+    <mat-header-cell *matHeaderCellDef> CNPJ/CPF </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.cnpjCpf}} </mat-cell>
+    <!-- <mat-cell *matCellDef="let row"> {{row.cnpjCpf | mask: (row.tipo === 'F' ? '###.###.###-##' : '##.###.###/####-##')}} </mat-cell> -->
+  </ng-container>
+
+  <!-- logradouro -->
+  <ng-container matColumnDef="logradouro">
+    <mat-header-cell *matHeaderCellDef> Logradouro </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.logradouro}} </mat-cell>
+  </ng-container>
+
+  <!-- numero -->
+  <ng-container matColumnDef="numero">
+    <mat-header-cell *matHeaderCellDef> Número </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.numero}} </mat-cell>
+  </ng-container>
+
+  <!-- bairro -->
+  <ng-container matColumnDef="bairro">
+    <mat-header-cell *matHeaderCellDef> Bairro </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.bairro}} </mat-cell>
+  </ng-container>
+
+  <!-- cep -->
+  <ng-container matColumnDef="cep">
+    <mat-header-cell *matHeaderCellDef> Cep </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.cep}} </mat-cell>
+  </ng-container>
+
+  <!-- uf -->
+  <ng-container matColumnDef="uf">
+    <mat-header-cell *matHeaderCellDef> UF </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.uf}} </mat-cell>
+  </ng-container>
+
+  <!-- fone -->
+  <ng-container matColumnDef="fone">
+    <mat-header-cell *matHeaderCellDef> Fone </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.fone}} </mat-cell>
+  </ng-container>
+
+  <!-- email -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

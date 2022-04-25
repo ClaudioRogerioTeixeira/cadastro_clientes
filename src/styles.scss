@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f3f3f3;
+}
+
+// Custom Snackbar
+.success-snackbar {
+  color: white;
+  background: rgba(57, 164, 21, 0.95);
+}
+
+.danger-snackbar {
+  color: white;
+  background: rgba(206, 34, 18, 0.95);
+}
+
+.mat-dialog-container{
+  padding: 0 !important;
+  overflow: none;
+}

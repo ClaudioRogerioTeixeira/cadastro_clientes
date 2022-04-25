@@ -1,0 +1,75 @@
+h1 {
+  color: #3f51b5;
+}
+
+.add-button {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 1em;
+}
+
+.mat-table {
+  max-height: 65vh !important;
+  overflow-x: scroll !important;
+}
+
+.mat-row, .mat-header-row {
+  min-width: 2200px;
+  width: 100%;
+}
+
+.mat-row:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+.mat-column-actions {
+  max-width: 4%;
+}
+
+.mat-column-tipo {
+  max-width: 3%;
+}
+
+.mat-column-nomeFantasia {
+  max-width: 15%;
+}
+
+.mat-column-razaoNome {
+  max-width: 18%;
+}
+
+.mat-column-cnpjCpf {
+  max-width: 7%;
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.mat-column-logradouro {
+  max-width: 15%;
+}
+
+.mat-column-numero {
+  max-width: 4%;
+}
+
+.mat-column-bairro {
+  max-width: 10%;
+}
+
+.mat-column-cep {
+  max-width: 4%;
+}
+
+.mat-column-uf {
+  max-width: 2%;
+}
+
+.mat-column-fone {
+  max-width: 6%;
+}
+
+.mat-column-email {
+  max-width: 10%;
+}
+

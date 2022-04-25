@@ -1,0 +1,72 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "razaoNome": "PALIN & MARTINS ORGANIZACAO TRIBUTARIA LTDA",
+      "nomeFantasia": "PALIN & MARTINS",
+      "tipo": "J",
+      "cnpjCpf": "12.345.678/9014.78",
+      "logradouro": "R BERNARDINO DE CAMPOS",
+      "numero": "3522",
+      "complemento": "CONJ 12 SALA 2",
+      "bairro": "Centro",
+      "cep": "15.015-350",
+      "codPais": "1058",
+      "uf": "SP",
+      "codMun": "3549805",
+      "fone": "(17) 9975-9699",
+      "email": "dp@palinemartins.com.br"
+    },
+    {
+      "id": 2,
+      "razaoNome": "Marco Antonio Rosa",
+      "nomeFantasia": "EcredRural Consultoria",
+      "tipo": "J",
+      "cnpjCpf": "16.950.283/0001.72",
+      "logradouro": "Avenida Noe Octacilio Ribeiro",
+      "numero": "1168",
+      "complemento": "Avenida Noe Otacilio Ribeiro 1169",
+      "bairro": "Jardim Soares",
+      "cep": "14.784-341",
+      "codPais": "1058",
+      "uf": "SP",
+      "codMun": "3505500",
+      "fone": "(17) 3301-2564",
+      "email": "dp.financeiro@palinemartins.com.br"
+    },
+    {
+      "id": 3,
+      "razaoNome": "Print Sistema Reprograficos Eireli",
+      "nomeFantasia": "Print",
+      "tipo": "J",
+      "cnpjCpf": "02.481.871/0001.08",
+      "logradouro": "Rua Coronel Spinola De Castro",
+      "numero": "3985",
+      "complemento": "Centro",
+      "bairro": "Vila Imperial",
+      "cep": "15.015-500",
+      "codPais": "1058",
+      "uf": "SP",
+      "codMun": "3549805",
+      "fone": "(17) 3222-6677",
+      "email": "contato@velani.com.br"
+    },
+    {
+      "razaoNome": "Claudio",
+      "nomeFantasia": "",
+      "tipo": "F",
+      "cnpjCpf": "811.801.707-55",
+      "logradouro": "Rua c25",
+      "numero": "152",
+      "complemento": "Perto Faculdade Federal",
+      "bairro": "Cristiano",
+      "cep": "14.780-230",
+      "codPais": "1058",
+      "uf": "SP",
+      "codMun": "3505500",
+      "fone": "(17) 9975-9696",
+      "email": "claudioteixeira@outlook.com",
+      "id": 4
+    }
+  ]
+}
