@@ -48,7 +48,12 @@ export class ClienteCadastroComponent implements OnInit, AfterViewInit {
 
     this.initForm();
     this.getCliente();
-      }
+
+    if (this.isEditing == false) {
+      const controlCpf = this.frmCadastro.get('cpf');
+      controlCpf?.disable();
+    }
+  }
 
   initForm() {
     this.frmCadastro = this.fb.group({

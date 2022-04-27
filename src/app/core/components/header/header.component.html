@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
-  <span flexLayout fxLayoutAlign="start center"><img src="../../../../assets/headerLogo.svg" alt="Logo">{{title}}</span>
+  <span flexLayout fxLayoutAlign="start center" routerLink="/" class="title"><img src="../../../../assets/headerLogo.svg" alt="Logo">{{title}}</span>
   <span fxFlex="100%"></span>
-  <button mat-icon-button aria-label="Dashboard" (click)="navigateTo('dashboard')">
+  <button mat-icon-button aria-label="Dashboard" (click)="navigateTo('dashboard')" matTooltip="Dashboard">
     <mat-icon>dashboard</mat-icon>
   </button>
-  <button mat-icon-button aria-label="Clientes" routerLink="/clientes">
+  <button mat-icon-button aria-label="Clientes" routerLink="/clientes" matTooltip="Cadastro de Clientes">
    <mat-icon>people_alt</mat-icon>
  </button>
 </mat-toolbar>

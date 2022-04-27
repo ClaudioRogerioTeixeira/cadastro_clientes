@@ -156,9 +156,9 @@
     </mat-tab-group>
 
     <mat-card-actions fxLayoutAlign="end" [ngStyle]="{'margin-bottom': '1%'}" >
-      <button mat-raised-button color="warn" (click)="goBack()"><span class="material-icons">arrow_circle_left</span> Voltar</button>
-      <button mat-raised-button color="primary" (click)="create()" *ngIf="!isEditing" [disabled]="!this.frmCadastro.valid"><span class="material-icons">save</span> Salvar</button>
-      <button mat-raised-button color="primary" (click)="update()" *ngIf="isEditing"><span class="material-icons">edit</span> Alterar</button>
+      <button mat-raised-button color="warn" (click)="goBack()" matTooltip="Voltar"><span class="material-icons">arrow_circle_left</span> Voltar</button>
+      <button mat-raised-button color="primary" (click)="create()" *ngIf="!isEditing" [disabled]="!this.frmCadastro.valid" matTooltip="Salvar registro"><span class="material-icons">save</span> Salvar</button>
+      <button mat-raised-button color="primary" (click)="update()" *ngIf="isEditing"><span class="material-icons" matTooltip="Apagar registro">edit</span> Alterar</button>
     </mat-card-actions>
   </mat-card>
 

@@ -1,15 +1,19 @@
-<div class="container">
-  <mat-dialog-content class="content">
-    <p class="mat-body-1">{{data.content}}</p>
-  </mat-dialog-content>
+<div class="main">
+  <div class="container">
+    <mat-dialog-content class="content">
+      <p class="mat-body-1">{{data.content}}</p>
+    </mat-dialog-content>
+  </div>
+
+  <!-- <img src="../../../../assets/lixeira.png"> -->
+
+  <mat-dialog-actions class="actions">
+    <button mat-button color="warn" [mat-dialog-close]="false" matTooltip="Cancelar">
+      {{data.cancelText}}
+    </button>
+
+    <button mat-button color="primary" [mat-dialog-close]="true" matTooltip="Apagar Registro">
+      <mat-icon>delete</mat-icon>{{data.confirmText}}
+    </button>
+  </mat-dialog-actions>
 </div>
-
-<mat-dialog-actions class="actions">
-  <button mat-button color="warn" [mat-dialog-close]="false">
-    {{data.cancelText}}
-  </button>
-
-  <button mat-button color="primary" [mat-dialog-close]="true">
-    {{data.confirmText}}
-  </button>
-</mat-dialog-actions>
