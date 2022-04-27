@@ -6,7 +6,8 @@ import { ICliente } from "./components/clientes/cliente.interface";
     razaoNome: 'PALIN & MARTINS ORGANIZACAO TRIBUTARIA LTDA',
     nomeFantasia: 'PALIN & MARTINS',
     tipo: '1',
-    cnpjCpf: '12564060000116',
+    cnpj: '12564060000116',
+    cpf: '',
 
     logradouro: 'R BERNARDINO DE CAMPOS',
     numero: '3522',
@@ -24,7 +25,8 @@ import { ICliente } from "./components/clientes/cliente.interface";
     razaoNome: 'Marco Antonio Rosa',
     nomeFantasia: 'EcredRural Consultoria',
     tipo: '1',
-    cnpjCpf: '16950283000172',
+    cnpj: '16950283000172',
+    cpf: '',
 
     logradouro: 'Avenida Noe Octacilio Ribeiro',
     numero: '1169',
@@ -42,7 +44,8 @@ import { ICliente } from "./components/clientes/cliente.interface";
     razaoNome: 'Print Sistema Reprograficos Eireli',
     nomeFantasia: 'Print',
     tipo: '1',
-    cnpjCpf: '02481871000108',
+    cnpj: '02481871000108',
+    cpf: '',
 
     logradouro: 'Rua Coronel Spinola De Castro',
     numero: '3984',

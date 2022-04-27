@@ -1,5 +1,3 @@
-import { MatPaginatorIntlPtBr } from './core/utils/paginator-ptbr-i18n';
-import { MatPaginatorIntl } from '@angular/material/paginator';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -43,9 +41,6 @@ import { NgxMaskModule } from 'ngx-mask';
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     }),
-  ],
-  providers: [
-    { provide: MatPaginatorIntl, useClass: MatPaginatorIntlPtBr }
   ],
   bootstrap: [AppComponent]
 })

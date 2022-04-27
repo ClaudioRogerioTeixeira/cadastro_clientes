@@ -4,7 +4,8 @@ export interface ICliente {
     razaoNome: string;
     nomeFantasia: string;
     tipo: string;
-    cnpjCpf: string;
+    cnpj: string;
+    cpf: string;
 
     logradouro: string;
     numero: string;
@@ -23,15 +24,16 @@ export const EMPTY_CLIENTE: ICliente =  {
   id: 0,
   razaoNome: '',
   nomeFantasia: '',
-  tipo: '',
-  cnpjCpf: '',
+  tipo: 'J',
+  cnpj: '',
+  cpf: '',
 
   logradouro: '',
   numero: '',
   complemento: '',
   bairro: '',
   cep: '',
-  codPais: '',
+  codPais: '1058',
   uf: '',
   codMun: '',
 

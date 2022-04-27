@@ -5,39 +5,49 @@
 
     <mat-card-content fxLayout fxLayoutGap="20px">
 
-      <mat-form-field  [ngStyle]="{'width': '3%'}" *ngIf="isEditing">
+      <mat-form-field  [ngStyle]="{'width': '2%'}" *ngIf="isEditing">
         <mat-label>Id</mat-label>
         <input matInput type="text" id="id" formControlName="id" [readonly]="true" >
       </mat-form-field>
 
       <div class="divPessoa">
-        <label class="lblPessoa">Tipo Pessoa: </label>
+        <label class="lblPessoa" *ngIf="!isEditing">Tipo: </label>
         <mat-radio-group formControlName="tipo" fxLayoutGap="10px" aria-label="Selecione uma Opção:" labelPosition="before">
           <mat-radio-button color="primary" value="J">Jurídica</mat-radio-button>
           <mat-radio-button color="primary"value="F">Física</mat-radio-button>
         </mat-radio-group>
       </div>
 
-      <mat-form-field [ngStyle]="{'width': '35%'}">
+      <mat-form-field [ngStyle]="{'width': '31%'}">
         <mat-label>{{frmCadastro.value.tipo === 'J' ? 'Razão Social' : 'Nome'}}</mat-label>
-        <input matInput type="text" id="razaoNome" formControlName="razaoNome" placeholder="Razão/Nome" minlength="5" maxlength="60">
+        <input matInput type="text" id="razaoNome" formControlName="razaoNome" placeholder="Razão/Nome">
         <mat-error *ngIf="frmCadastro.controls['razaoNome'].hasError('required')">Campo obrigatório.</mat-error>
         <mat-error *ngIf="frmCadastro.controls['razaoNome'].hasError('minlength')">Razão/Nome deve conter no mínimo 5 caracteres.</mat-error>
+        <mat-error *ngIf="frmCadastro.controls['razaoNome'].hasError('maxlength')">Razão/Nome deve conter no máximo 60 caracteres.</mat-error>
       </mat-form-field>
 
-      <mat-form-field [ngStyle]="{'width': '25%'}"> <!-- *ngIf="frmCadastro.value.tipo === 'J'" -->
+      <mat-form-field [ngStyle]="{'width': '31%'}"> <!-- *ngIf="frmCadastro.value.tipo === 'J'" -->
         <mat-label>Nome Fantasia</mat-label>
-        <input matInput type="text" id="nomeFantasia" formControlName="nomeFantasia" placeholder="Nome Fantasia" minlength="5" maxlength="60">
+        <input matInput type="text" id="nomeFantasia" formControlName="nomeFantasia" placeholder="Nome Fantasia">
         <mat-error *ngIf="frmCadastro.controls['nomeFantasia'].hasError('required')">Campo obrigatório.</mat-error>
         <mat-error *ngIf="frmCadastro.controls['nomeFantasia'].hasError('minlength')">Nome Fantasia deve conter no mínimo 5 caracteres.</mat-error>
+        <mat-error *ngIf="frmCadastro.controls['nomeFantasia'].hasError('maxlength')">Nome Fantasia deve conter no máximo 60 caracteres.</mat-error>
       </mat-form-field>
 
-      <mat-form-field [ngStyle]="{'width': '14%'}">
-        <mat-label>{{frmCadastro.value.tipo === 'J' ? 'CNPJ' : 'CPF'}}</mat-label>
-        <input matInput type="text" id="cnpjCpf" formControlName="cnpjCpf" placeholder="CNPJ/CPF" minlength="{{ frmCadastro.value.tipo === 'J' ? '18' : '14' }}" maxlength="{{ frmCadastro.value.tipo === 'J' ? '18' : '14' }}" mask="{{ frmCadastro.value.tipo === 'J' ? '00.000.000/0000.00' : '000.000.000-00' }}"> <!-- [ngStyle]="{backgroundColor: getColor()}" -->
-        <mat-error *ngIf="frmCadastro.controls['cnpjCpf'].hasError('required')">Campo obrigatório.</mat-error>
-        <mat-error *ngIf="frmCadastro.controls['cnpjCpf'].hasError('minlength')">{{ frmCadastro.value.tipo === 'J' ? 'CNPJ deve conter no mínimo 18 caracteres.' : 'CPF deve conter no mínimo 14 caracteres.' }}</mat-error>
+      <mat-form-field [ngStyle]="{'width': '10%'}">
+        <mat-label>CNPJ</mat-label>
+        <input matInput type="text" id="cnpj" formControlName="cnpj" placeholder="CNPJ" mask="00.000.000/0000.00">
+        <mat-error *ngIf="frmCadastro.controls['cnpj'].hasError('required')">Campo obrigatório.</mat-error>
+        <mat-error *ngIf="frmCadastro.controls['cnpj'].hasError('minlength')">CNPJ deve conter no mínimo 18 caracteres.</mat-error>
       </mat-form-field>
+
+      <mat-form-field [ngStyle]="{'width': '8%'}">
+        <mat-label>CPF</mat-label>
+        <input matInput type="text" id="cpf" formControlName="cpf" placeholder="CPF" mask="000.000.000-00">
+        <mat-error *ngIf="frmCadastro.controls['cpf'].hasError('required')">Campo obrigatório.</mat-error>
+        <mat-error *ngIf="frmCadastro.controls['cpf'].hasError('minlength')">CPF deve conter no mínimo 14 caracteres.</mat-error>
+      </mat-form-field>
+
 
     </mat-card-content>
 
@@ -45,42 +55,46 @@
       <!-- Endereço -->
       <mat-tab label="Endereço">
 
-        <mat-card-content fxLayout fxLayoutGap="20px">
+        <mat-card-content fxLayout fxLayoutGap="20px" [ngStyle]="{'margin-top': '15px'}">
           <mat-form-field [ngStyle]="{'width': '44%'}">
             <mat-label>Logradouro</mat-label>
-            <input matInput type="text" id="logradouro" formControlName="logradouro" placeholder="Logradouro" minlength="5" maxlength="60">
+            <input matInput type="text" id="logradouro" formControlName="logradouro" placeholder="Logradouro">
             <mat-error *ngIf="frmCadastro.controls['logradouro'].hasError('required')">Campo obrigatório.</mat-error>
             <mat-error *ngIf="frmCadastro.controls['logradouro'].hasError('minlength')">Campo deve conter no mínimo 5 caracteres.</mat-error>
+            <mat-error *ngIf="frmCadastro.controls['logradouro'].hasError('maxlength')">Logradouro deve conter no máximo 60 caracteres.</mat-error>
           </mat-form-field>
 
-          <mat-form-field [ngStyle]="{'width': '10%'}">
+          <mat-form-field [ngStyle]="{'width': '10%', 'margin-top': '15px'}">
             <mat-label>Número</mat-label>
-            <input matInput type="text" id="numero" formControlName="numero" placeholder="Número" maxlength="10">
+            <input matInput type="text" id="numero" formControlName="numero" placeholder="Número">
             <mat-error *ngIf="frmCadastro.controls['numero'].hasError('required')">Campo obrigatório.</mat-error>
-            <mat-error *ngIf="frmCadastro.controls['numero'].hasError('maxlength')">Campo deve conter no máximo 10 caracteres.</mat-error>
+            <mat-error *ngIf="frmCadastro.controls['numero'].hasError('maxlength')">Número deve conter no máximo 10 caracteres.</mat-error>
           </mat-form-field>
 
-          <mat-form-field [ngStyle]="{'width': '43%'}">
+          <mat-form-field [ngStyle]="{'width': '43%', 'margin-top': '15px'}">
             <mat-label>Complemento</mat-label>
-            <input matInput type="text" id="complemento" formControlName="complemento" placeholder="Complemento" minlength="5" maxlength="60">
+            <input matInput type="text" id="complemento" formControlName="complemento" placeholder="Complemento">
             <mat-error *ngIf="frmCadastro.controls['complemento'].hasError('required')">Campo obrigatório.</mat-error>
             <mat-error *ngIf="frmCadastro.controls['complemento'].hasError('maxlength')">Campo deve conter no mínimo 5 caracteres.</mat-error>
+            <mat-error *ngIf="frmCadastro.controls['complemento'].hasError('maxlength')">Complemento deve conter no máximo 60 caracteres.</mat-error>
           </mat-form-field>
         </mat-card-content>
 
         <mat-card-content fxLayout fxLayoutGap="24px">
           <mat-form-field [ngStyle]="{'width': '28%'}">
             <mat-label>Bairro</mat-label>
-            <input matInput type="text" id="bairro" formControlName="bairro" placeholder="Bairro" minlength="5" maxlength="30">
+            <input matInput type="text" id="bairro" formControlName="bairro" placeholder="Bairro">
             <mat-error *ngIf="frmCadastro.controls['bairro'].hasError('required')">Campo obrigatório.</mat-error>
-            <mat-error *ngIf="frmCadastro.controls['bairro'].hasError('maxlength')">Campo deve conter no máximo 30 caracteres.</mat-error>
+            <mat-error *ngIf="frmCadastro.controls['bairro'].hasError('minlength')">Campo deve conter no mínimo 5 caracteres.</mat-error>
+            <mat-error *ngIf="frmCadastro.controls['bairro'].hasError('maxlength')">Bairro deve conter no máximo 30 caracteres.</mat-error>
           </mat-form-field>
 
           <mat-form-field [ngStyle]="{'width': '10%'}">
             <mat-label>Cep</mat-label>
-            <input matInput type="text" id="cep" formControlName="cep" placeholder="Cep" maxlength="10" mask="00.000-000">
+            <input matInput type="text" id="cep" formControlName="cep" placeholder="Cep" mask="00.000-000">
             <mat-error *ngIf="frmCadastro.controls['cep'].hasError('required')">Campo obrigatório.</mat-error>
-            <mat-error *ngIf="frmCadastro.controls['cep'].hasError('maxlength')">Campo deve conter no máximo 8 caracteres.</mat-error>
+            <mat-error *ngIf="frmCadastro.controls['cep'].hasError('minlength')">Campo deve conter no mínimo 10 caracteres.</mat-error>
+            <mat-error *ngIf="frmCadastro.controls['cep'].hasError('maxlength')">Cep deve conter no máximo 10 caracteres.</mat-error>
           </mat-form-field>
 
           <mat-form-field [ngStyle]="{'width': '15%'}">
@@ -114,7 +128,7 @@
       <!-- Telefone -->
       <mat-tab label="Telefone">
 
-        <mat-card-content fxLayout fxLayoutGap="24px">
+        <mat-card-content fxLayout fxLayoutGap="24px" [ngStyle]="{'margin-top': '15px'}">
           <mat-form-field [ngStyle]="{'width': '15%'}">
             <mat-label>Fone</mat-label>
             <input matInput type="text" id="fone" formControlName="fone" placeholder="Fone" minlength="14" maxlength="14" mask="(00) 0000-0000">
@@ -128,7 +142,7 @@
       <!-- Email -->
       <mat-tab label="Email">
 
-        <mat-card-content fxLayout fxLayoutGap="24px">
+        <mat-card-content fxLayout fxLayoutGap="24px" [ngStyle]="{'margin-top': '15px'}">
           <mat-form-field [ngStyle]="{'width': '35%'}">
             <mat-label>Email</mat-label>
             <input matInput type="text" id="email" formControlName="email" placeholder="Email" minlength="10" maxlength="60">
@@ -141,7 +155,7 @@
 
     </mat-tab-group>
 
-    <mat-card-actions fxLayoutAlign="end" >
+    <mat-card-actions fxLayoutAlign="end" [ngStyle]="{'margin-bottom': '1%'}" >
       <button mat-raised-button color="warn" (click)="goBack()"><span class="material-icons">arrow_circle_left</span> Voltar</button>
       <button mat-raised-button color="primary" (click)="create()" *ngIf="!isEditing" [disabled]="!this.frmCadastro.valid"><span class="material-icons">save</span> Salvar</button>
       <button mat-raised-button color="primary" (click)="update()" *ngIf="isEditing"><span class="material-icons">edit</span> Alterar</button>

@@ -11,8 +11,6 @@ import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.co
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgxMaskModule } from 'ngx-mask';
-import { MatPaginatorIntl } from '@angular/material/paginator';
-import { MatPaginatorIntlPtBr } from 'src/app/core/utils/paginator-ptbr-i18n';
 
 @NgModule({
   declarations: [ClientesComponent, ClientesGridComponent, ClienteCadastroComponent],
@@ -23,9 +21,6 @@ import { MatPaginatorIntlPtBr } from 'src/app/core/utils/paginator-ptbr-i18n';
     ClientesRoutingModule,
     ReactiveFormsModule,
     NgxMaskModule.forChild(),
-  ],
-  providers: [
-    { provide: MatPaginatorIntl, useClass: MatPaginatorIntlPtBr }
   ],
   exports: [
     ClientesComponent

@@ -11,7 +11,7 @@ import { ClienteService } from '../../../core/services/cliente.service';
   styleUrls: ['./clientes-grid.component.scss']
 })
 export class ClientesGridComponent implements OnInit {
-  displayedColumns: string[] = ['actions', 'tipo', 'nomeFantasia', 'razaoNome', 'cnpjCpf', 'logradouro', 'numero', 'bairro', 'cep', 'uf', 'fone', 'email'];
+  displayedColumns: string[] = ['actions', 'tipo', 'nomeFantasia', 'razaoNome', 'cnpj', 'cpf', 'logradouro', 'numero', 'bairro', 'cep', 'uf', 'fone', 'email'];
   clientes: ICliente[] = [];
   cliente!: ICliente;
 

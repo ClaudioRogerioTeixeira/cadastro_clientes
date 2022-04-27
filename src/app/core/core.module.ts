@@ -14,8 +14,6 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
-import { MatPaginatorIntl } from '@angular/material/paginator';
-import { MatPaginatorIntlPtBr } from './utils/paginator-ptbr-i18n';
 
 const CORE_COMPONENTS = [HeaderComponent, FooterComponent, MessagesComponent, LoadingComponent, PageNotFoundComponent, ConfirmationDialogComponent]
 const MODULES = [MaterialModule, FlexLayoutModule, RouterModule]
@@ -29,10 +27,6 @@ const MODULES = [MaterialModule, FlexLayoutModule, RouterModule]
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true
-    },
-    {
-      provide: MatPaginatorIntl,
-      useClass: MatPaginatorIntlPtBr
     }
   ]
 })

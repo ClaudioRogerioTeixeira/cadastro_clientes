@@ -11,7 +11,7 @@
 
   <!-- actions -->
   <ng-container matColumnDef="actions" sticky="true">
-    <mat-header-cell *matHeaderCellDef><mat-icon color="primary">settings</mat-icon></mat-header-cell>
+    <mat-header-cell *matHeaderCellDef class="alignSettings"><mat-icon color="primary">settings</mat-icon></mat-header-cell>
     <mat-cell *matCellDef="let row">
       <button mat-icon-button matTooltip="Editar registro" (click)="$event.stopPropagation()" routerLink="{{row.id}}"> <!-- edit(row.id); -->
         <mat-icon color="primary">edit</mat-icon>
@@ -55,10 +55,15 @@
   </ng-container>
 
   <!-- cnpj -->
-  <ng-container matColumnDef="cnpjCpf">
-    <mat-header-cell *matHeaderCellDef> CNPJ/CPF </mat-header-cell>
-    <mat-cell *matCellDef="let row"> {{row.cnpjCpf}} </mat-cell>
-    <!-- <mat-cell *matCellDef="let row"> {{row.cnpjCpf | mask: (row.tipo === 'F' ? '###.###.###-##' : '##.###.###/####-##')}} </mat-cell> -->
+  <ng-container matColumnDef="cnpj">
+    <mat-header-cell *matHeaderCellDef> CNPJ </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.cnpj}} </mat-cell>
+  </ng-container>
+
+  <!-- cpf -->
+  <ng-container matColumnDef="cpf">
+    <mat-header-cell *matHeaderCellDef> CPF </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.cpf}} </mat-cell>
   </ng-container>
 
   <!-- logradouro -->
