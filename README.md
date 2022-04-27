@@ -6,5 +6,4 @@ npm install
 npm install - @angular/cli
 ng s -o
 
-Bullet list
 
