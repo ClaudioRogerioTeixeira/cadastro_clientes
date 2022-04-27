@@ -13,6 +13,8 @@ Cadastro de Clientes (Angular 12, Json-Server)
 - Angular
 - Angular Material
 - Json-Server
+- FlexBox
+- Flex-Layout
 
 
 
