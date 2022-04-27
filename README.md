@@ -1,5 +1,5 @@
 # Cadastro de Clientes
-Cadastro de Clientes (Angular 17, Json-Server)
+Cadastro de Clientes (Angular 12, Json-Server)
 
 ## Frontend:
 - npm install
@@ -8,5 +8,12 @@ Cadastro de Clientes (Angular 17, Json-Server)
 
 ## Backend:
 - npm run backend
+
+## Tecnologias
+- Angular
+- Angular Material
+- Json-Server
+
+
 
 
